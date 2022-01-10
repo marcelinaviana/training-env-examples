@@ -1,19 +1,21 @@
-# ..
-application: "My awesome application"
-# You can do inline comments now
-globals:
-  waitTime: 42
-  retries: 5
-pipelines:
-- application: "My awesome application"
-  name: "My cool pipeline"
-  appConfig: {}
-  keepWaitingPipelines: false
-  limitConcurrent: true
-  stages:
-  - name: Wait For It...
-    refId: '1'
-    requisiteStageRefIds: []
-    type: wait
-    waitTime: 4
-  triggers: []
+{
+    "application": "eks-dinghytest",
+    "pipelines": [
+        {
+            "application": "eks-dinghytest",
+            "name": "DinghyValidation-Tests",
+            "keepWaitingPipelines": false,
+            "limitConcurrent": true,
+            "stages": [
+                {
+                    "name": "Wait",
+                    "refId": "1",
+                    "requisiteStageRefIds": [],
+                    "type": "wait",
+                    "waitTime": 40
+                }
+            ],
+            "triggers": []
+        }
+    ]
+}
