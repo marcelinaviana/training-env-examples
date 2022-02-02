@@ -1,0 +1,165 @@
+{
+  "appConfig": {},
+  "keepWaitingPipelines": false,
+  "lastModifiedBy": "admin@alcspintest.com",
+  "limitConcurrent": true,
+  "stages": [
+    {
+      "action": "plan",
+      "artifacts": [
+        {
+          "account": "gh-repo",
+          "artifact": {
+            "artifactAccount": "gh-repo",
+            "id": "187cdb30-b3b3-4efc-9224-4e2f177eaf66",
+            "reference": "https://github.com/alchen99/terraform-samples.git",
+            "type": "git/repo",
+            "version": "master"
+          }
+        }
+      ],
+      "backendArtifact": {
+        "account": "github",
+        "artifact": {
+          "artifactAccount": "github",
+          "id": "159563b5-6739-4f73-bcf7-d04b325fb540",
+          "name": "random/backend.tf",
+          "reference": "https://api.github.com/repos/alchen99/terraform-samples/contents/random/backend.tf",
+          "type": "github/file",
+          "version": "master"
+        }
+      },
+      "dir": "random",
+      "expectedArtifacts": [
+        {
+          "defaultArtifact": {
+            "customKind": true,
+            "id": "cef79818-e252-47d2-818c-62feddafe15e"
+          },
+          "displayName": "ordinary-firefox-64",
+          "id": "4486093f-d135-4a83-8350-5f9b46ca10dd",
+          "matchArtifact": {
+            "artifactAccount": "embedded-artifact",
+            "id": "968d8ad9-127a-4590-a28f-eb5af0f29f00",
+            "name": "planfile",
+            "type": "embedded/base64"
+          },
+          "useDefaultArtifact": false,
+          "usePriorArtifact": false
+        }
+      ],
+      "name": "Terraform Plan",
+      "overrides": {},
+      "refId": "1",
+      "requisiteStageRefIds": [],
+      "terraformVersion": "0.12.31",
+      "type": "terraform",
+      "workspace": "test1"
+    },
+    {
+      "failPipeline": true,
+      "instructions": "Apply the Terraform Plan?",
+      "judgmentInputs": [],
+      "name": "Manual Judgment",
+      "notifications": [],
+      "refId": "2",
+      "requisiteStageRefIds": [
+        "1"
+      ],
+      "type": "manualJudgment"
+    },
+    {
+      "action": "apply",
+      "artifacts": [
+        {
+          "account": "gh-repo",
+          "artifact": {
+            "artifactAccount": "gh-repo",
+            "id": "4ea02cdb-bbf4-4fa4-ae3a-8a1fef229a81",
+            "reference": "https://github.com/alchen99/terraform-samples.git",
+            "type": "git/repo",
+            "version": "master"
+          }
+        }
+      ],
+      "backendArtifact": {
+        "account": "github",
+        "artifact": {
+          "artifactAccount": "github",
+          "id": "43114979-053d-4622-bb0c-fce7f59c8e7f",
+          "name": "random/backend.tf",
+          "reference": "https://api.github.com/repos/alchen99/terraform-samples/contents/random/backend.tf",
+          "type": "github/file",
+          "version": "master"
+        }
+      },
+      "dir": "random",
+      "expectedArtifacts": [],
+      "name": "Terraform Apply",
+      "overrides": {},
+      "refId": "3",
+      "requisiteStageRefIds": [
+        "2"
+      ],
+      "terraformVersion": "0.12.31",
+      "type": "terraform",
+      "workspace": "test1"
+    },
+    {
+      "action": "output",
+      "artifacts": [
+        {
+          "account": "gh-repo",
+          "artifact": {
+            "artifactAccount": "gh-repo",
+            "id": "8a6ce233-fc6f-4313-81ab-c04f20163615",
+            "reference": "https://github.com/alchen99/terraform-samples.git",
+            "type": "git/repo",
+            "version": "master"
+          }
+        },
+        {
+          "account": "",
+          "id": "4486093f-d135-4a83-8350-5f9b46ca10dd"
+        }
+      ],
+      "backendArtifact": {
+        "account": "github",
+        "artifact": {
+          "artifactAccount": "github",
+          "id": "f8424082-b440-42e6-a40c-32ccc9f09411",
+          "name": "random/backend.tf",
+          "reference": "https://api.github.com/repos/alchen99/terraform-samples/contents/random/backend.tf",
+          "type": "github/file",
+          "version": "master"
+        }
+      },
+      "dir": "random",
+      "name": "Terraform Output",
+      "overrides": {},
+      "refId": "4",
+      "requisiteStageRefIds": [
+        "3"
+      ],
+      "terraformVersion": "0.12.31",
+      "type": "terraform"
+    },
+    {
+      "failOnFailedExpressions": true,
+      "name": "Evaluate Variables",
+      "refId": "5",
+      "requisiteStageRefIds": [
+        "4"
+      ],
+      "type": "evaluateVariables",
+      "variables": [
+        {
+          "key": "z",
+          "value": "${#stage('Terraform Output').outputs.status.outputs.suffix.value}"
+        }
+      ]
+    }
+  ],
+  "triggers": [],
+  "updateTs": "1643632575000"
+}
