@@ -1,10 +1,17 @@
-resource "aws_s3_bucket" "test-bucket" {
-  bucket = "my-tf-test-bucket"
+module "s3_bucket" {
+  source = "terraform-aws-modules/s3-bucket/aws"
+  version = "1.25.0"
+
+
+  bucket = "test-bucket-austin"
   acl    = "private"
-  region = "us-west-2"
+
+  versioning = {
+    enabled = false
+  }
 
   tags = {
-    Name        = "test-bucket"
-    Environment = "Dev"
+    env   = "dev"
+    owner = "austin"
   }
 }
