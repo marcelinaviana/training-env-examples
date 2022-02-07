@@ -2,10 +2,9 @@ terraform {
   required_version = ">= 0.12.0"
 
   backend "s3" {
-    region         = "us-east-1"
-    bucket         = "alc-tf-samples-state"
-    key            = "public-samples/training2.tfstate"
-    dynamodb_table = "alc-tf-samples-state"
+    region         = "us-west-2"
+    bucket         = "justin-training-bucket"
+    key            = "training-samples/training2.tfstate"
     encrypt        = "true"
   }
 }
