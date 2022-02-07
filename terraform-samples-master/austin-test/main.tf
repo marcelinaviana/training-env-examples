@@ -29,3 +29,7 @@ data "aws_s3_bucket" "selected" {
 
   bucket = "test-bucket-austin"
 }
+
+output "s3bucket" {
+  value = data.aws_s3_bucket.selected.id
+}
