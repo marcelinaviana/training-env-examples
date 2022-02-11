@@ -1,2 +1,2 @@
 # training-env-examples
-This is the **PUBLIC** companion repo that is used in the [traning envs](https://github.com/armory-io/customer-training-envs) and [OSS envs](https://github.com/armory-io/oss-testing-envs)
+This is the **PUBLIC** companion repo that is used in the [training envs](https://github.com/armory-io/customer-training-envs) and [OSS envs](https://github.com/armory-io/oss-testing-envs)
