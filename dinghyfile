@@ -1,8 +1,8 @@
 {
-    "application": "eks-dinghytest",
+    "application": "jmoon",
     "pipelines": [
         {
-            "application": "eks-dinghytest",
+            "application": "jmoon",
             "name": "DinghyValidation-Tests",
             "keepWaitingPipelines": false,
             "limitConcurrent": true,
