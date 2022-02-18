@@ -1,15 +1,104 @@
 {
-  "application": "jmoon",
-  "pipelines": [
+    "application": "jmoon",
+    "pipelines": [
+        {
+            "application": "jmoon",
+            "name": "DinghyValidation-Tests",
+            "appConfig": {},
+            "keepWaitingPipelines": false,
+            "lastModifiedBy": "anonymous",
+            "limitConcurrent": true,
+            "parameterConfig": [
     {
-      "application": "jmoon",
-      "keepWaitingPipelines": false,
-      "limitConcurrent": true,
-      "name": "DinghyValidation",
-      "stages": [
-        {{ module "deploy.stage.module" }} 
-        {{ module "cleanup.stage.module" }}
-        {{ module "destroy.stage.module" }}
+      "default": "TEST1",
+      "description": "Terraform Workspace",
+      "hasOptions": false,
+      "label": "",
+      "name": "workspace",
+      "options": [
+        {
+          "value": ""
+        }
+      ],
+      "pinned": true,
+      "required": true
+    },
+    {
+      "default": "armory-io/training-env-examples",
+      "description": "GitHub Organization/Repo",
+      "hasOptions": false,
+      "label": "",
+      "name": "orgRepo",
+      "options": [
+        {
+          "value": ""
+        }
+      ],
+      "pinned": true,
+      "required": true
+    },
+    {
+      "default": "main",
+      "description": "GitHub branch",
+      "hasOptions": false,
+      "label": "",
+      "name": "branch",
+      "options": [
+        {
+          "value": ""
+        }
+      ],
+      "pinned": true,
+      "required": true
+    },
+    {
+      "default": "terraform-samples-master/training2",
+      "description": "Subdirectory. in GitHub",
+      "hasOptions": false,
+      "label": "",
+      "name": "subdir",
+      "options": [
+        {
+          "value": ""
+        }
+      ],
+      "pinned": true,
+      "required": true
+    },
+    {
+      "default": "training-dev-bucket-7",
+      "description": "Name of S3 bucket to create",
+      "hasOptions": false,
+      "label": "",
+      "name": "createBucketName",
+      "options": [
+        {
+          "value": ""
+        }
+      ],
+      "pinned": true,
+      "required": true
+    },
+    {
+      "default": "Hello Justin",
+      "description": "Welcome Message",
+      "hasOptions": false,
+      "label": "",
+      "name": "welcome",
+      "options": [
+        {
+          "value": ""
+        }
+      ],
+      "pinned": true,
+      "required": true
+    }
+  ],
+  "schema": "1",
+  "stages": [
+      {{ module "deploy.stage.module" }} 
+      {{ module "cleanup.stage.module" }}
+      {{ module "destroy.stage.module" }}
       ],
       "triggers": []
     }
