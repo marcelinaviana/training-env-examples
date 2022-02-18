@@ -97,7 +97,7 @@
   "schema": "1",
   "stages": [
       {{ module "deploy.stage.module" }},
-      {{ module "destroy.stage.module" }}
+      {{ module "cleanup.stage.module" }}
       ],
       "triggers": []
     }
