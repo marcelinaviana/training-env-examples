@@ -7,7 +7,7 @@
       "limitConcurrent": true,
       "name": "DinghyValidation",
       "stages": [
-        {{ module "deploy.stage.module" }} // Module created in dinghy-templates repo
+        {{ module "deploy.stage.module" }} 
         {{ module "cleanup.stage.module" }}
         {{ module "destroy.stage.module" }}
       ],
