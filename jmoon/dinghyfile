@@ -10,7 +10,7 @@
             "limitConcurrent": true,
             "parameterConfig": [
     {
-      "default": "TEST1",
+      "default": "",
       "description": "Terraform Workspace",
       "hasOptions": false,
       "label": "",
@@ -66,7 +66,7 @@
       "required": true
     },
     {
-      "default": "training-dev-bucket-7",
+      "default": "",
       "description": "Name of S3 bucket to create",
       "hasOptions": false,
       "label": "",
@@ -80,7 +80,7 @@
       "required": true
     },
     {
-      "default": "Hello Justin",
+      "default": "",
       "description": "Welcome Message",
       "hasOptions": false,
       "label": "",
@@ -96,7 +96,8 @@
   ],
   "schema": "1",
   "stages": [
-      {{ module "deploy.stage.module" }}, 
+      {{ module "deploy.stage.module" }},
+      {{ module "cleanup.stage.module" }},
       {{ module "destroy.stage.module" }}
       ],
       "triggers": []
