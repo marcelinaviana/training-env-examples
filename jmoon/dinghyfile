@@ -5,7 +5,7 @@
       "application": "jmoon",
       "keepWaitingPipelines": false,
       "limitConcurrent": true,
-      "name": "DinghyValidation-Tests",
+      "name": "DinghyValidation",
       "stages": [
         {{ module "deploy.stage.module" }} // Module created in dinghy-templates repo
         {{ module "cleanup.stage.module" }}
