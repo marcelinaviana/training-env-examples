@@ -1,4 +1,4 @@
-{
+    {
       "failPipeline": true,
       "instructions": "Do you want to cleanup?",
       "judgmentInputs": [],
