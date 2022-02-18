@@ -176,9 +176,4 @@
       "source": "text",
       "type": "runJobManifest"
     }
-  ],
-  "triggers": [],
-  "updateTs": "1643673058000"
-        }
-    ]
-}
+  
