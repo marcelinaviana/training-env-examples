@@ -1,4 +1,15 @@
-    {  
+    {
+      "allowScaleDownActive": true,
+      "cloudProvider": "aws",
+      "cloudProviderType": "aws",
+      "cluster": "jmoon-stack-testing",
+      "credentials": "jmoon-aws",
+      "moniker": {
+        "app": "jmoon",
+        "cluster": "jmoon-stack-testing",
+        "detail": "testing",
+        "stack": "stack"
+      },
       "name": "Scale Down Cluster All Clusters",
       "preferLargerOverNewer": "false",
       "refId": "10",
@@ -169,3 +180,5 @@
   "triggers": [],
   "updateTs": "1643673058000"
         }
+    ]
+}
