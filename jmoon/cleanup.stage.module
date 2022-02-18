@@ -1,0 +1,12 @@
+{
+      "failPipeline": true,
+      "instructions": "Do you want to cleanup?",
+      "judgmentInputs": [],
+      "name": "Cleanup Manual Judgment",
+      "notifications": [],
+      "refId": "9",
+      "requisiteStageRefIds": [
+        "7"
+      ],
+      "type": "manualJudgment"
+    }
