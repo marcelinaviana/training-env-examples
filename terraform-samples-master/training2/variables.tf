@@ -1,7 +1,7 @@
 variable "region" {
   description = "The region the VPC is in"
   type        = string
-  # default     = "us-east-1"
+  default     = "us-east-1"
 }
 
 variable "env" {
@@ -18,7 +18,7 @@ variable "project_prefix" {
 
 variable "s3_bucket_name" {
   type = string
-  # default = "training-dev-bucket"
+  default = "training-dev-bucket"
 }
 
 variable "create_s3_bucket" {
