@@ -9,8 +9,3 @@ terraform {
   }
 }
 
-# Chris testing fix
-module "s3_bucket" {
-  source = "./main.tf"
-  s3_bucket_name = var.s3_bucket_name
-}
