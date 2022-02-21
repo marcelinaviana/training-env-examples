@@ -34,14 +34,3 @@ data "aws_s3_bucket" "selected" {
 output "s3bucket" {
   value = data.aws_s3_bucket.selected.id
 }
-
-variable "region" {
-  description = "The region the VPC is in"
-  type        = string
-  default     = var.region
-}
-
-variable "s3_bucket_name" {
-  type = string
-  default = var.s3_bucket_name
-}
