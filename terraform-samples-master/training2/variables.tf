@@ -23,5 +23,5 @@ variable "s3_bucket_name" {
 
 variable "create_s3_bucket" {
   type = bool
-  # default = true
+  default = true
 }
