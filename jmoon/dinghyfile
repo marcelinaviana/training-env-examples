@@ -110,7 +110,7 @@
                 {
                     module "deploy.stage.module"
                 }
-            }, ],
+            } ],
             "triggers": []
         }
     ]
