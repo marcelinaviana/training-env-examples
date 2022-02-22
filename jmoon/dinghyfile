@@ -10,7 +10,7 @@
             "limitConcurrent": true,
             "parameterConfig": [
     {
-      "default": "Test-default",
+      "default": "Test-Default",
       "description": "Terraform Workspace",
       "hasOptions": false,
       "label": "",
@@ -80,7 +80,7 @@
       "required": true
     },
     {
-      "default": "Hello There...",
+      "default": "Hello There",
       "description": "Welcome Message",
       "hasOptions": false,
       "label": "",
