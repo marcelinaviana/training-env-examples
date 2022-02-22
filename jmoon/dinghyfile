@@ -82,21 +82,10 @@
             ],
             "schema": "1",
             "stages": [{
-                    {
-                        module "deploy.stage.module"
-                    }
-                },
-                {
-                    {
-                        module "cleanup.stage.module"
-                    }
-                },
-                {
-                    {
-                        module "destroy.stage.module"
-                    }
-                }
-            ],
+                    {{ module "deploy.stage.module"}},
+                    {{ module "cleanup.stage.module"}},
+                    {{ module "destroy.stage.module"}}
+            }],
             "triggers": []
         },
         {
@@ -107,7 +96,7 @@
             "lastModifiedBy": "anonymous",
             "limitConcurrent": true,
             "stages": [{
-                    module "deploy.stage.module"
+                   {{ module "deploy.stage.module" }} 
             } ],
             "triggers": []
         }
