@@ -3,14 +3,14 @@
     "pipelines": [
         {
             "application": "jmoon",
-            "name": "DinghyValidation-2",
+            "name": "DinghyValidation",
             "appConfig": {},
             "keepWaitingPipelines": false,
             "lastModifiedBy": "anonymous",
             "limitConcurrent": true,
             "parameterConfig": [
     {
-      "default": "",
+      "default": "Test-default",
       "description": "Terraform Workspace",
       "hasOptions": false,
       "label": "",
@@ -80,7 +80,7 @@
       "required": true
     },
     {
-      "default": "",
+      "default": "Hello There...",
       "description": "Welcome Message",
       "hasOptions": false,
       "label": "",
