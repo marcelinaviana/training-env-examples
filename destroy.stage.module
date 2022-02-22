@@ -26,12 +26,12 @@
       "action": "plan",
       "artifacts": [
         {
-          "account": "gh-repo",
+          "account": "training-env-examples",
           "artifact": {
-            "artifactAccount": "gh-repo",
-            "id": "750b04ae-c85d-42a3-90e9-1926ac608d35",
+            "artifactAccount": "training-env-examples",
+            "id": "e0efc7b9-d20e-4445-acf1-7ec4d6ceb2cc",
             "reference": "https://github.com/${parameters.orgRepo}.git",
-            "type": "embedded/base64",
+            "type": "git/repo",
             "version": "${parameters.branch}"
           }
         }
@@ -68,6 +68,7 @@
       ],
       "name": "Terraform Plan Destroy",
       "overrides": {
+        "region": "us-west-2",
         "s3_bucket_name": "${parameters.createBucketName}"
       },
       "planForDestroy": true,
@@ -75,6 +76,7 @@
       "requisiteStageRefIds": [
         "14"
       ],
+      "targets": [],
       "terraformVersion": "0.12.31",
       "type": "terraform",
       "workspace": "${parameters.workspace}"
@@ -83,12 +85,12 @@
       "action": "destroy",
       "artifacts": [
         {
-          "account": "gh-repo",
+          "account": "training-env-examples",
           "artifact": {
-            "artifactAccount": "gh-repo",
-            "id": "1bf69751-f0a4-4395-9cd7-81757cdf15e5",
+            "artifactAccount": "training-env-examples",
+            "id": "6159effe-58e7-4784-9d1d-dea72daa2f43",
             "reference": "https://github.com/${parameters.orgRepo}.git",
-            "type": "embedded/base64",
+            "type": "git/repo",
             "version": "${parameters.branch}"
           }
         },
@@ -110,7 +112,10 @@
       },
       "dir": "${parameters.subdir}",
       "name": "Terraform Destroy",
-      "overrides": {},
+      "overrides": {
+        "region": "us-west-2",
+        "s3_bucket_name": "${parameters.createBucketName}"
+      },
       "refId": "12",
       "requisiteStageRefIds": [
         "13"
@@ -132,17 +137,16 @@
       "type": "manualJudgment"
     },
     {
-      "account": "",
+      "account": "jmoon-kubernetes",
       "alias": "runJob",
       "application": "terraformer",
       "cloudProvider": "kubernetes",
-      "credentials": "",
+      "credentials": "jmoon-kubernetes",
       "manifest": {
         "apiVersion": "batch/v1",
         "kind": "Job",
         "metadata": {
-          "generateName": "emptybucket-",
-          "namespace": "runjob"
+          "generateName": "emptybucket-"
         },
         "spec": {
           "backoffLimit": 0,
@@ -176,4 +180,3 @@
       "source": "text",
       "type": "runJobManifest"
     }
-  
