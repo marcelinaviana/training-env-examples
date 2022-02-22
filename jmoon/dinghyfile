@@ -101,6 +101,19 @@
       {{ module "destroy.stage.module" }}
       ],
       "triggers": []
+    },
+
+    {
+        "application": "jmoon",
+        "name": "Deploy-Validation",
+        "appConfig": {},
+        "keepWaitingPipelines": false,
+        "lastModifiedBy": "anonymous",
+        "limitConcurrent": true,
+        "stages": [
+            {{ module "deploy.stage.module" }},
+            ],
+            "triggers": []
     }
   ]
 }
