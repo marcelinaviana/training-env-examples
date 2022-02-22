@@ -1,1 +1,35 @@
+{
+    "application": "testing",
+    "pipelines": [
+        {
+            "application": "testing",
+            "name": "Deploy",
+            "appConfig": {},
+            "keepWaitingPipelines": false,
+            "lastModifiedBy": "anonymous",
+            "limitConcurrent": true,
+  "schema": "1",
+  "stages": [
+      {{ module "deploy.stage.module" }},
+      ],
+      "triggers": []
+    }
+    
+    {
+            "application": "testing",
+            "name": "Destroy",
+            "appConfig": {},
+            "keepWaitingPipelines": false,
+            "lastModifiedBy": "anonymous",
+            "limitConcurrent": true,
+  "schema": "1",
+  "stages": [
+      {{ module "destroy.stage.module" }}
+      ],
+      "triggers": []
+    }
+    
+  ]
+  
+}
 
