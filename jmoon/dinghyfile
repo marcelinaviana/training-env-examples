@@ -107,9 +107,7 @@
             "lastModifiedBy": "anonymous",
             "limitConcurrent": true,
             "stages": [{
-                {
                     module "deploy.stage.module"
-                }
             } ],
             "triggers": []
         }
