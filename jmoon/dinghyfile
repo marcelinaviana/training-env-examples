@@ -3,7 +3,7 @@
     "pipelines": [
         {
             "application": "jmoon",
-            "name": "DinghyValidation",
+            "name": "DinghyValidation-2",
             "appConfig": {},
             "keepWaitingPipelines": false,
             "lastModifiedBy": "anonymous",
@@ -80,7 +80,7 @@
       "required": true
     },
     {
-      "default": "Hello There",
+      "default": "Hello Autodesk",
       "description": "Welcome Message",
       "hasOptions": false,
       "label": "",
