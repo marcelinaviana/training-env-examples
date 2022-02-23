@@ -1,0 +1,106 @@
+{
+    "application": "vianam",
+    "pipelines": [
+        {
+            "application": "vianam",
+            "name": "DinghyValidation-2",
+            "appConfig": {},
+            "keepWaitingPipelines": false,
+            "lastModifiedBy": "anonymous",
+            "limitConcurrent": true,
+            "parameterConfig": [
+    {
+      "default": "Test-Default",
+      "description": "Terraform Workspace",
+      "hasOptions": false,
+      "label": "",
+      "name": "workspace",
+      "options": [
+        {
+          "value": ""
+        }
+      ],
+      "pinned": true,
+      "required": true
+    },
+    {
+      "default": "armory-io/training-env-examples",
+      "description": "GitHub Organization/Repo",
+      "hasOptions": false,
+      "label": "",
+      "name": "orgRepo",
+      "options": [
+        {
+          "value": ""
+        }
+      ],
+      "pinned": true,
+      "required": true
+    },
+    {
+      "default": "main",
+      "description": "GitHub branch",
+      "hasOptions": false,
+      "label": "",
+      "name": "branch",
+      "options": [
+        {
+          "value": ""
+        }
+      ],
+      "pinned": true,
+      "required": true
+    },
+    {
+      "default": "terraform-samples-master/training2",
+      "description": "Subdirectory. in GitHub",
+      "hasOptions": false,
+      "label": "",
+      "name": "subdir",
+      "options": [
+        {
+          "value": ""
+        }
+      ],
+      "pinned": true,
+      "required": true
+    },
+    {
+      "default": "",
+      "description": "Name of S3 bucket to create",
+      "hasOptions": false,
+      "label": "",
+      "name": "createBucketName",
+      "options": [
+        {
+          "value": ""
+        }
+      ],
+      "pinned": true,
+      "required": true
+    },
+    {
+      "default": "Hello Autodesk",
+      "description": "Welcome Message",
+      "hasOptions": false,
+      "label": "",
+      "name": "welcome",
+      "options": [
+        {
+          "value": ""
+        }
+      ],
+      "pinned": true,
+      "required": true
+    }
+  ],
+  "schema": "1",
+  "stages": [
+      {{ module "deploy.stage.module" }},
+      {{ module "cleanup.stage.module" }},
+      {{ module "destroy.stage.module" }}
+      ],
+      "triggers": []
+    }
+  ]
+}
